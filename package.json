@@ -1,10 +1,10 @@
 {
-  "name": "ng-regex",
+  "name": "regex",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href 'https://webia1.github.io/regex.github.io/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
