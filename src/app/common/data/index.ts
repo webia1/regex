@@ -1,6 +1,6 @@
 export const RegexExamples = [
   {
-    regex: '^$.,-*+?=!:|()[]{}',
+    regex: '^$.,-*+?=!:|()[]{}\\',
     desc: 'Besondere Zeichen',
     url: '',
   },
