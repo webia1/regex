@@ -1,1 +1,138 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+body {
+  font-size: 16px;
+}
+
+.cDebug {
+  border: 1px solid red;
+}
+
+.cRegexRow {
+  font-size: 1.2rem;
+  padding-left: 40px;
+  margin-bottom: 60px;
+}
+
+.cRegexString {
+  font-family: monospace;
+}
+
+.cRegexLetter {
+  border-radius: 4px;
+  width: 30px;
+  height: 36px;
+  border: 1px solid rgb(144, 143, 143);
+  margin-right: 4px;
+}
+
+.cTall {
+  height: 130%;
+  font-size: 1.4rem;
+}
+
+.cTaller {
+  height: 170%;
+  font-size: 2rem;
+}
+
+.cRegexDescription {
+  font-family: "Trebuchet MS";
+}
+
+.cSlash {
+  background-color: blue;
+  color: white;
+}
+
+.cParen {
+  background-color: rgb(1, 82, 13);
+  color: white;
+}
+
+.cOpening {
+  margin-right: -1px;
+}
+
+.cClosing {
+  margin-left: -6px;
+}
+
+.cBracket {
+  background-color: rgb(181, 225, 5);
+  color: black;
+}
+
+.cCurly {
+  // font-weight: bold;
+  background-color: rgb(254, 217, 30);
+  color: black;
+}
+
+.cCaret,
+.cDollar {
+  background-color: black;
+  color: rgb(255, 255, 0);
+}
+
+.cCaretWithinBracket {
+  margin-left: -6px;
+  background-color: rgb(181, 225, 5);
+  color: black;
+  border-left: 1px solid rgba(black, 0.1);
+}
+
+.cDot {
+  font-weight: bold;
+  background-color: red;
+  color: white;
+}
+
+.cPipe {
+  font-weight: bold;
+  background-color: rgb(6, 255, 247);
+  color: black;
+}
+
+.cComma {
+  font-weight: bold;
+  color: red;
+}
+
+.cStar {
+  background-color: black;
+  color: white;
+  margin-left: -6px;
+}
+
+.cMinus,
+.cPlus,
+.cQuestion,
+.cEqual,
+.cExclamation,
+.cColon {
+  font-weight: bold;
+  background-color: black;
+  color: yellow;
+}
+
+.cMinusNotFirstLine {
+  margin-left: -6px;
+  margin-right: -2px;
+  height: 80%;
+}
+
+.cLikeEscaped {
+  background-color: orange;
+  color: black;
+  border: 3px solid red;
+}
+
+.cEscapeSign {
+  margin-right: -6px;
+}

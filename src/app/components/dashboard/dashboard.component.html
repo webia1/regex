@@ -1,1 +1,56 @@
-<p>dashboard works!</p>
+<div
+  fxFill
+  fxLayout="column"
+  fxLayoutAlign="center stretch"
+  [ngClass]="{ cDebug: debug }"
+>
+  <div *ngFor="let e of regexExamples; first as firstLine" fxLayout="column">
+    <div fxLayout="row" class="cRegexRow">
+      <div
+        fxLayout="row"
+        fxFlex
+        class="cRegexString"
+        fxLayoutAlign="start center"
+      >
+        <span
+          class="cRegexLetter"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          *ngFor="let letter of e.regex; index as i"
+          [ngClass]="{
+            cSlash: letter == '/',
+            'cParen cTaller': letter == '(' || letter == ')',
+            cOpening: !firstLine && letter == '(',
+            cClosing: !firstLine && letter == ')',
+            cTaller: !firstLine && (letter == '(' || letter == ')'),
+            'cBracket cTall': letter == '[' || letter == ']',
+            cTall: !firstLine && (letter == '[' || letter == ']'),
+            'cCurly ': letter == '{' || letter == '}',
+            'cCaret cDollar': letter == '^' || letter == '$',
+            cCaretWithinBracket: letter == '^' && e.regex[i - 1] == '[',
+            cDot: letter == '.',
+            cPipe: letter == '|',
+            cComma: letter == ',',
+            cStar: letter == '*',
+            cMinus: letter == '-',
+            cPlus: letter == '+',
+            cQuestion: letter == '?',
+            cEqual: letter == '=',
+            cExclamation: letter == '!',
+            cColon: letter == ':',
+            cMinusNotFirstLine: letter == '-' && !firstLine,
+            cEscapeSign: letter == '\\',
+            cLikeEscaped: letter == '\\' || e.regex[i - 1] == '\\'
+          }"
+        >
+          <span>
+            {{ letter }}
+          </span>
+        </span>
+      </div>
+      <div fxLayout="row" fxFlex="30" class="cRegexDescription">
+        {{ e.desc }}
+      </div>
+    </div>
+  </div>
+</div>
