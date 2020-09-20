@@ -13,10 +13,16 @@ body {
   border: 1px solid red;
 }
 
+.cDashboard {
+  padding-top: 20px;
+}
+
 .cRegexRow {
   font-size: 1.2rem;
   padding-left: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted gray;
 }
 
 .cRegexString {
@@ -41,13 +47,17 @@ body {
   font-size: 2rem;
 }
 
-.cRegexDescription {
+.cRegexDescription,
+.cRegexExternalLink {
   font-family: "Trebuchet MS";
+  font-size: 1rem;
 }
 
 .cSlash {
-  background-color: blue;
-  color: white;
+  background-color: white;
+  color: blue;
+  border: none;
+  font-size: 4rem;
 }
 
 .cParen {
@@ -74,10 +84,25 @@ body {
   color: black;
 }
 
+.cStarNotFirstLine {
+  margin-left: -6px;
+}
+
 .cCaret,
-.cDollar {
-  background-color: black;
-  color: rgb(255, 255, 0);
+.cComma,
+.cMinus,
+.cDot,
+.cDollar,
+.cStar,
+.cPlus,
+.cPipe,
+.cQuestion,
+.cEqual,
+.cExclamation,
+.cColon {
+  font-weight: bold;
+  background-color: rgb(115, 0, 255);
+  color: yellow;
 }
 
 .cCaretWithinBracket {
@@ -85,40 +110,6 @@ body {
   background-color: rgb(181, 225, 5);
   color: black;
   border-left: 1px solid rgba(black, 0.1);
-}
-
-.cDot {
-  font-weight: bold;
-  background-color: red;
-  color: white;
-}
-
-.cPipe {
-  font-weight: bold;
-  background-color: rgb(6, 255, 247);
-  color: black;
-}
-
-.cComma {
-  font-weight: bold;
-  color: red;
-}
-
-.cStar {
-  background-color: black;
-  color: white;
-  margin-left: -6px;
-}
-
-.cMinus,
-.cPlus,
-.cQuestion,
-.cEqual,
-.cExclamation,
-.cColon {
-  font-weight: bold;
-  background-color: black;
-  color: yellow;
 }
 
 .cMinusNotFirstLine {

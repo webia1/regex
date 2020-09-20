@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  public debug = true;
+  public debug = false;
   public regexExamples: Array<any>;
 
   constructor() {}
@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
       return {
         regex: e.regex.split(''),
         desc: e.desc,
+        url: e.url,
       };
     });
   }

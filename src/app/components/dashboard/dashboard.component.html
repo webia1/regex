@@ -1,11 +1,12 @@
 <div
   fxFill
   fxLayout="column"
-  fxLayoutAlign="center stretch"
+  fxLayoutAlign="start stretch"
+  class="cDashboard"
   [ngClass]="{ cDebug: debug }"
 >
   <div *ngFor="let e of regexExamples; first as firstLine" fxLayout="column">
-    <div fxLayout="row" class="cRegexRow">
+    <div fxLayout="column" fxLayoutGap="20px" class="cRegexRow">
       <div
         fxLayout="row"
         fxFlex
@@ -32,6 +33,7 @@
             cPipe: letter == '|',
             cComma: letter == ',',
             cStar: letter == '*',
+            cStarNotFirstLine: !firstLine && letter == '*',
             cMinus: letter == '-',
             cPlus: letter == '+',
             cQuestion: letter == '?',
@@ -48,8 +50,14 @@
           </span>
         </span>
       </div>
-      <div fxLayout="row" fxFlex="30" class="cRegexDescription">
-        {{ e.desc }}
+      <div
+        fxLayout="column"
+        fxLayoutGap="10px"
+        class="cRegexDescription"
+        [innerHTML]="e.desc"
+      ></div>
+      <div *ngIf="e.url" fxLayout="row" class="cRegexExternalLink">
+        <a [href]="e.url" target="_blank"> >> Beispiel</a>
       </div>
     </div>
   </div>
