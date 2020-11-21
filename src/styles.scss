@@ -1,3 +1,5 @@
+@import "assets/scss/fonts.scss";
+
 html,
 body {
   margin: 0;
@@ -13,6 +15,21 @@ body {
   border: 1px solid red;
 }
 
+.cZero {
+  width: max(600px, 80vw);
+  height: 100vh;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.cTitle1 {
+  font-family: "EB Garamond Bold";
+  font-size: 1.6rem;
+}
+
 .cDashboard {
   padding-top: 20px;
 }
@@ -22,7 +39,7 @@ body {
   padding-left: 40px;
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px dotted gray;
+  // border-bottom: 1px dotted gray;
 }
 
 .cRegexString {
