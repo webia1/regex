@@ -18,11 +18,72 @@ body {
 .cZero {
   width: max(600px, 80vw);
   height: 100vh;
-  border-right: 1px solid gray;
-  border-left: 1px solid gray;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  font-family: "EB Garamond";
+}
+
+.cStdBorder {
+  // border: 1px solid #ebebeb;
+}
+
+.cStdPadding {
+  padding: 10px;
+}
+
+.cZRow {
+  //
+}
+
+.cZRegexRow,
+.cZRegexColumnRow {
+  font-size: 1.2rem;
+  background-color: #f3f1f1;
+}
+
+.cZRegexRow {
+  margin: 10px 0;
+}
+
+.cZRegexColumnRow {
+  @extend .cStdPadding;
+}
+
+.cZRegexRowLeft,
+.cZRegexRowRight {
+  @extend .cStdBorder;
+  @extend .cStdPadding;
+}
+
+.cZRegexColumnRowLeft,
+.cZRegexColumnRowRight {
+  @extend .cStdBorder;
+}
+
+.cZRegexColumnRowExampleLeft {
+  margin-right: 20px;
+}
+
+.cZMonoCharacter {
+  font-family: monospace;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-right: 4px;
+  padding: 4px;
+  background-color: #fafafa;
+}
+
+code {
+  font-size: 1rem !important;
+  background-color: rgb(192, 255, 1);
+  padding: 4px;
+  margin-right: 5px;
+}
+
+.cTitle0 {
+  font-family: "EB Garamond Bold";
+  font-size: 2rem;
 }
 
 .cTitle1 {

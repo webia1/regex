@@ -1,3 +1,15 @@
+export const SpecialCharactersArray = '^$.,-*+?=!:|()[]{}\\/'.split('');
+export const ClassShorthands = [
+  '\\d',
+  '\\w',
+  '\\s',
+  '\\b',
+  '\\D',
+  '\\W',
+  '\\S',
+  '\\B',
+];
+
 export const RegexExamples = [
   {
     regex: '^$.,-*+?=!:|()[]{}\\',

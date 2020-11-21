@@ -1,3 +1,120 @@
 <div class="cZero" fxLayout="column">
-  <div class="cTitle1">Special Characters</div>
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle0">Regular Expressions</div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
+        <ul>
+          <li>
+            Two main rules
+            <ul>
+              <li>The earliest (leftmost) match wins</li>
+              <li>Standard quantifiers are greedy</li>
+            </ul>
+          </li>
+          <li>
+            NFA Engines (Details -> Right side)
+            <ul>
+              <li>Traditional NFA</li>
+              <li>POSIX (alwaysa picks the longest of the leftmode matches.</li>
+              Example:
+              <code>cat|category</code>
+              Would match "category" even if "cat" appears earlier.
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div fxFlex="40" class="cZRegexRowRight">
+        <ul>
+          <li>
+            Regular Expression Engines
+            <ul>
+              <li>DFA: Deterministic Finite Automation</li>
+              <li>NFA: Nondeterministic Finite Automation</li>
+              <ul>
+                Slower than DFA but:
+                <li>Capturing, Look-Around and NonGreedy Quantifiers</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle1">Special Characters</div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
+        <div *ngFor="let c of specialCharacters" class="cZMonoCharacter">
+          {{ c }}
+        </div>
+      </div>
+      <div fxFlex="35" class="cZRegexRowRight"></div>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle1">Normal Classes</div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
+        <div *ngFor="let c of normalClasses" class="cZMonoCharacter">
+          {{ c }}
+        </div>
+      </div>
+      <div fxFlex="35" class="cZRegexRowRight"><!-- RIGHT --></div>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle1">Class Shorthands (Excerpt)</div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
+        <div *ngFor="let c of classShorthands" class="cZMonoCharacter">
+          {{ c }}
+        </div>
+      </div>
+      <div fxFlex="35" class="cZRegexRowRight"><!-- RIGHT --></div>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle1">Posix Character Classes (Excerpt)</div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
+        <div *ngFor="let c of posixClasses" class="cZMonoCharacter">
+          {{ c }}
+        </div>
+      </div>
+      <div fxFlex="35" class="cZRegexRowRight"><!-- RIGHT --></div>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle1">Unicode Properties, Scripts and Blocks (Excerpt)</div>
+    <div fxLayout="column" fxLayoutGap="10px" class="cZRegexColumnRow">
+      <div fxFlex class="cZRegexColumnRowLeft" fxLayout="row wrap">
+        <div *ngFor="let c of unicodeClassesCo" class="cZMonoCharacter">
+          {{ c }}
+        </div>
+      </div>
+      <div
+        fxFlex
+        class="cZRegexColumnRowRight"
+        fxLayout="column"
+        fxLayoutGap="10px"
+      >
+        <div
+          *ngFor="let c of unicodeClassesCoExamples"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="10px"
+        >
+          <div class="cZMonoCharacter">
+            {{ c[0] }}
+          </div>
+          <div>{{ c[1] }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
