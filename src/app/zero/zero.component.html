@@ -12,10 +12,10 @@
             </ul>
           </li>
           <li>
-            NFA Engines (Details -> Right side)
+            NFA Engines (Details Right side &rarr;)
             <ul>
               <li>Traditional NFA</li>
-              <li>POSIX (alwaysa picks the longest of the leftmode matches.</li>
+              <li>POSIX (always picks the longest of the leftmode matches.</li>
               Example:
               <code>cat|category</code>
               Would match "category" even if "cat" appears earlier.
@@ -42,7 +42,11 @@
   </div>
 
   <div class="cZRow" fxLayout="column">
-    <div class="cTitle1">Special Characters</div>
+    <div class="cTitle1">Character Representations</div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle2">Special Characters</div>
     <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
       <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
         <div *ngFor="let c of specialCharacters" class="cZMonoCharacter">
@@ -54,7 +58,60 @@
   </div>
 
   <div class="cZRow" fxLayout="column">
-    <div class="cTitle1">Normal Classes</div>
+    <div class="cTitle2">Octal Escape: <span class="cMono">\num</span></div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
+        <div
+          *ngFor="let c of octalEscape"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="10px"
+        >
+          <div class="cZMonoCharacter">
+            {{ c[0] }}
+          </div>
+          <div>{{ c[1] }}</div>
+        </div>
+      </div>
+      <div fxFlex="35" class="cZRegexRowRight"><!-- RIGHT --></div>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle2">
+      Hex and Unicode Escapes:
+      <span *ngFor="let n of hexUniCodeEscapes" class="cMono">{{ n }}</span>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle2">
+      Control Characters: <span class="cMono">\cchar</span>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
+        <div
+          *ngFor="let c of controlCharacters"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="10px"
+        >
+          <div class="cZMonoCharacter">
+            {{ c[0] }}
+          </div>
+          <div>{{ c[1] }}</div>
+        </div>
+      </div>
+      <div fxFlex="35" class="cZRegexRowRight"><!-- RIGHT --></div>
+    </div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle1">Character Classes and Class-Like Constructs</div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle2">Normal Classes</div>
     <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
       <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
         <div *ngFor="let c of normalClasses" class="cZMonoCharacter">
@@ -66,7 +123,7 @@
   </div>
 
   <div class="cZRow" fxLayout="column">
-    <div class="cTitle1">Class Shorthands (Excerpt)</div>
+    <div class="cTitle2">Class Shorthands (Excerpt)</div>
     <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
       <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
         <div *ngFor="let c of classShorthands" class="cZMonoCharacter">
@@ -78,7 +135,7 @@
   </div>
 
   <div class="cZRow" fxLayout="column">
-    <div class="cTitle1">Posix Character Classes (Excerpt)</div>
+    <div class="cTitle2">Posix Character Classes (Excerpt)</div>
     <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
       <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">
         <div *ngFor="let c of posixClasses" class="cZMonoCharacter">
@@ -90,13 +147,26 @@
   </div>
 
   <div class="cZRow" fxLayout="column">
-    <div class="cTitle1">Unicode Properties, Scripts and Blocks (Excerpt)</div>
+    <div class="cTitle2">
+      Unicode Properties, Scripts and Blocks (Excerpt):
+      <span *ngFor="let n of unicodeClassesCo" class="cMono">{{ n }}</span>
+    </div>
+    <div class="cStdText">
+      <a
+        href="http://www.regular-expressions.info/unicode.html#category"
+        target="_blank"
+        >See Details at:
+        http://www.regular-expressions.info/unicode.html#category</a
+      >
+      or
+      <a
+        href="https://www.fileformat.info/info/unicode/category/index.htm"
+        target="_blank"
+        >here: https://www.fileformat.info/info/unicode/category/index.htm</a
+      >
+    </div>
     <div fxLayout="column" fxLayoutGap="10px" class="cZRegexColumnRow">
-      <div fxFlex class="cZRegexColumnRowLeft" fxLayout="row wrap">
-        <div *ngFor="let c of unicodeClassesCo" class="cZMonoCharacter">
-          {{ c }}
-        </div>
-      </div>
+      <div fxFlex class="cZRegexColumnRowLeft" fxLayout="row wrap"></div>
       <div
         fxFlex
         class="cZRegexColumnRowRight"
@@ -112,9 +182,46 @@
           <div class="cZMonoCharacter">
             {{ c[0] }}
           </div>
+          <div [innerHTML]="c[1]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle2">Unicode Combining Character Sequence</div>
+    <div fxLayout="column" fxLayoutGap="10px" class="cZRegexColumnRow">
+      <div
+        fxFlex
+        class="cZRegexColumnRowRight"
+        fxLayout="column"
+        fxLayoutGap="10px"
+      >
+        <div
+          *ngFor="let c of unicodeCombiningCharacterSequence"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="10px"
+        >
+          <div class="cZMonoCharacter">
+            {{ c[0] }}
+          </div>
           <div>{{ c[1] }}</div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle1">Anchors and zero-width assertions</div>
+  </div>
+
+  <div class="cZRow" fxLayout="column">
+    <div class="cTitle2">
+      Start of Line/String:
+      <span *ngFor="let n of startOfLineString" class="cMono">{{ n }}</span>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" class="cZRegexRow">
+      <div fxFlex class="cZRegexRowLeft" fxLayout="row wrap">Description</div>
+      <div fxFlex="35" class="cZRegexRowRight"><!-- RIGHT --></div>
     </div>
   </div>
 </div>

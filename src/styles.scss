@@ -33,7 +33,7 @@ body {
 }
 
 .cZRow {
-  //
+  margin: 10px 0;
 }
 
 .cZRegexRow,
@@ -65,7 +65,12 @@ body {
   margin-right: 20px;
 }
 
-.cZMonoCharacter {
+.cMono {
+  font-size: 1.2rem;
+}
+
+.cZMonoCharacter,
+.cMono {
   font-family: monospace;
   border-radius: 4px;
   border: 1px solid #ddd;
@@ -81,14 +86,36 @@ code {
   margin-right: 5px;
 }
 
-.cTitle0 {
+.cTitle0,
+.cTitle1,
+.cTitle2,
+.cStdText {
   font-family: "EB Garamond Bold";
-  font-size: 2rem;
+}
+
+.cStdText a {
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+
+.cStdText a:hover {
+  text-decoration: solid;
+  margin-bottom: 2px;
+}
+
+.cTitle0 {
+  font-size: 3rem;
 }
 
 .cTitle1 {
-  font-family: "EB Garamond Bold";
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.cTitle2 {
   font-size: 1.6rem;
+  color: #666;
+  margin: 5px 0;
 }
 
 .cDashboard {
