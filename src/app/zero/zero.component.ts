@@ -37,9 +37,7 @@ export class ZeroComponent implements OnInit {
     '[:xdigit:]',
   ];
 
-  // ANCHORS AND ZERO-WIDTH ASSERTIONS
 
-  public startOfLineString = ['^', ['\\A']];
 
   public unicodeClassesCo = ['\\p{prop}', '\\P{prop}'];
 
@@ -116,6 +114,10 @@ export class ZeroComponent implements OnInit {
       '(PCRE-PHP) Matches any valid Unicode sequence, including line breaks.',
     ],
   ];
+
+  // ANCHORS AND ZERO-WIDTH ASSERTIONS
+
+  public startOfLineString = ['^', ['\\A']];
 
   constructor() {}
 
