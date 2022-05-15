@@ -33,6 +33,10 @@ git branch -M master
 git push -u origin master
 ```
 
+## Go to Pages in settings
+
+Go to the pages in settings and start deploying options and save.
+
 ## Navigate to the Webpage
 
 <https://webia1.github.io/regex.github.io/>
